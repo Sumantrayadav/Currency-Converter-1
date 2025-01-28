@@ -7,16 +7,32 @@ exchangeRateText = document.querySelector(".message"),
 exchangeIcon = document.querySelector(".dropdown .icon"),
 apiKey = "99a0aec004527b1a155623da";
 
+//START
+  //INPUT: amount, sourceCurrency, targetCurrency
+  //VALIDATE: amount is numeric and > 0
+  //FETCH: exchangeRate from API using sourceCurrency and targetCurrency
+  //IF API call is successful THEN
+    //convertedAmount = amount * exchangeRate
+    //DISPLAY: convertedAmount
+  //ELSE
+    //DISPLAY: "Error fetching exchange rate"
+  //ENDIF
+//END
 
 
+
+
+
+
+``
 for(let i = 0; i < dropDown.length; i++){
     for(currency_code in countryList){
         //By default it select From USD to INR
         let selected;
         if(i == 0){
-            selected = currency_code == "USD" ? "selected" : "";
+            selected = currency_code == "NPR" ? "selected" : "";
         }else if(i == 1){
-            selected = currency_code == "INR" ? "selected" : "";
+            selected = currency_code == "USD" ? "selected" : "";
         }
         //Creating option tag that passing currency code as a text & value
         let optionTag = `<option value="${currency_code}" ${selected}>${currency_code}</option>`;
